@@ -12,8 +12,10 @@ app.controller('MainController', ['$scope', function($scope){
     var taskInput = $('input').filter("#taskEntry");
     var task = $(taskInput).val();
     $(taskInput).val("");
-    $scope.todos.list.push(task);
-    $scope.saveList();
+    if (task) {
+      $scope.todos.list.push(task);
+      $scope.saveList();
+    }
   };
 
   $scope.deleteTodo = function(todo) {
