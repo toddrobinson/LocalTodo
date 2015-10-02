@@ -1,5 +1,5 @@
 app.controller('MainController', ['$scope', function($scope){
-  $scope.title = "Local To-do.";
+  $scope.title = "Local To-do";
   if (!localStorage.getItem('todos')) {
         $scope.todos = {};
         $scope.todos.list = [];
@@ -12,10 +12,14 @@ app.controller('MainController', ['$scope', function($scope){
     var taskInput = $('input').filter("#taskEntry");
     var task = $(taskInput).val();
     $(taskInput).val("");
-    if (task) {
+    if (task && $scope.todos.list.indexOf(task) < 0) {
       $scope.todos.list.push(task);
       $scope.saveList();
     }
+    else {
+      alert("Task blank or duplicate.");
+    }
+
   };
 
   $scope.deleteTodo = function(todo) {
