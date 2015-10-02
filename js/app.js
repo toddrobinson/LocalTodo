@@ -1,1 +1,1 @@
-var app = angular.module("localTodo" , []);
+var app = angular.module("localTodo" , ['ngAnimate']);
