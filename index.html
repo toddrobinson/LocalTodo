@@ -14,20 +14,23 @@
 </head>
 <body ng-app="localTodo">
   <main ng-controller="MainController">
-    <h1>{{title}}</h1>
-    <hr>
-    <h2>Add a to-do:</h2>
-    <form  ng-submit="addTodo()">
-      <input type="text" id="taskEntry" placeholder="Example: Take out trash">
-      <!-- <button ng-click="addTodo()">Add todo</button> -->
-      <input type="submit"  value="Add to-do">
-    </form>
-    <hr>
-    <section class="todoList" ng-repeat="todo in todos.list track by $index">
-      <div class="todo" id="{{todo}}">{{todo}} <a href="" ng-click="deleteTodo(todo)">Delete</a></div>
+    <section class="row">
+      <h1 class="text-center">{{title}}</h1>
+      <h2>Add a to-do:</h2>
+      <form  ng-submit="addTodo()">
+        <input type="text" class="small-12 columns" id="taskEntry" placeholder="Example: Take out trash">
+        <input type="submit" class="button small-12 columns" value="Add to-do">
+      </form>
+    </section>
+    <section class="todoList row" ng-repeat="todo in todos.list track by $index">
+      <div class="todo small-12 columns">
+        <div class="todo-text small-10 columns" id="todo-{{$index}}">{{todo}}</div>
+        <div class="small-2 columns"><a href="" ng-click="deleteTodo(todo,$index)">Delete</a></div>
+      </div>
     </section>
   </main>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular-animate.js"></script>
 <!-- Modules -->
 <script src="js/app.js" ></script>
 
