@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Local To-do | Todd Robinson</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css">
@@ -24,9 +24,9 @@
     </section>
     <section class="todoList row" >
       <h2 class="text-center">Your To-dos</h2>
-      <div class="todo small-12 columns" ng-repeat="todo in todos.list">
-        <div class="todo-text small-10 columns" id="todo-{{$index}}">{{todo}}</div>
-        <div class="todo-delete small-2 columns"><a href="" ng-click="deleteTodo(todo,$index)"><i class="fa fa-trash-o"></i></a></div>
+      <div class="todo small-12  columns" ng-repeat="todo in todos.list">
+        <div class="todo-text small-10 large-11 columns" id="todo-{{$index}}">{{todo}}</div>
+        <div class="todo-delete small-2 large-1 columns"><a href="" ng-click="deleteTodo(todo,$index)"><i class="fa fa-trash-o"></i></a></div>
       </div>
     </section>
   </main>
