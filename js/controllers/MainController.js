@@ -1,5 +1,5 @@
 app.controller('MainController', ['$scope', function($scope){
-  $scope.title = "Local Todo.";
+  $scope.title = "Local To-do.";
   if (!localStorage.getItem('todos')) {
         $scope.todos = [];
         $scope.todos.push("Example todo!");

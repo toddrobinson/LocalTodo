@@ -1,3 +1,22 @@
+@mixin center {
+  margin-left: auto;
+  margin-right: auto;
+}
+body {
+  box-sizing: border-box;
+  font: 14px;
+  padding: 1em;
+}
+
+main {
+  @include center;
+  width: 70%;
+}
 input[type="text"] {
   width: 300px;
+  padding: .25em;
+}
+
+.todo {
+  margin: 1em 0 1em 0;
 }

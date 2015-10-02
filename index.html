@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <!-- Angular -->
@@ -15,11 +15,11 @@
   <main ng-controller="MainController">
     <h1>{{title}}</h1>
     <hr>
-    <h2>Add a todo:</h2>
+    <h2>Add a to-do:</h2>
     <form  ng-submit="addTodo()">
       <input type="text" id="taskEntry" placeholder="Example: Take out trash">
       <!-- <button ng-click="addTodo()">Add todo</button> -->
-      <input type="submit"  value="Add todo">
+      <input type="submit"  value="Add to-do">
     </form>
     <hr>
     <section class="todoList" ng-repeat="todo in todos track by $index">
