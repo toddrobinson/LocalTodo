@@ -22,7 +22,7 @@
       <input type="submit"  value="Add to-do">
     </form>
     <hr>
-    <section class="todoList" ng-repeat="todo in todos track by $index">
+    <section class="todoList" ng-repeat="todo in todos.list track by $index">
       <div class="todo" id="{{todo}}">{{todo}} <a href="" ng-click="deleteTodo(todo)">Delete</a></div>
     </section>
   </main>
