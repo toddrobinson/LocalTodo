@@ -3,15 +3,26 @@
   margin-left: auto;
   margin-right: auto;
 }
-
-
 body {
   font-family: 'VT323',monospace;
+  box-sizing: border-box;
 }
 
+.button {
+  font-family: 'VT323',monospace;
+  background-color: #2ecc71;
+  &:hover {
+    background-color: #27ae60;
+  }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'VT323',monospace;
+}
 input[type="text"] {
+  height: auto;
   font-size: 1.5em;
-  padding: 1em;
+  padding: .7em;
   margin-bottom: 0;
 }
 
@@ -21,12 +32,14 @@ input[type="submit"] {
 
 .todoList {
   border: 1px solid black;
+  margin-bottom: 3em;
   h2 {
+    text-transform: uppercase;
     border-bottom: 1px solid black;
     margin-bottom: 0;
   }
   .todo {
-    font-size: 1.1em;
+    font-size: 1.5em;
     padding: .5em 0 .5em 0;
     margin: .25em 0em .25em 0em;
     border-bottom: 1px dotted rgba(128, 128, 128, 0.68);;
