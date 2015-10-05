@@ -11,7 +11,7 @@ body {
 .button {
   font-family: 'VT323',monospace;
   background-color: #2ecc71;
-  &:hover {
+  &:hover, &:focus {
     background-color: #27ae60;
   }
 }
