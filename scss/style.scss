@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=VT323);
 @mixin center {
   margin-left: auto;
   margin-right: auto;
@@ -5,7 +6,7 @@
 
 
 body {
-  box-sizing: border-box;
+  font-family: 'VT323',monospace;
 }
 
 input[type="text"] {
@@ -26,17 +27,26 @@ input[type="submit"] {
   }
   .todo {
     font-size: 1.1em;
-    padding: .25em 0 .25em 0;
+    padding: .5em 0 .5em 0;
     margin: .25em 0em .25em 0em;
-    border-bottom: 1px dotted rgba(128, 128, 128, 0.28);;
+    border-bottom: 1px dotted rgba(128, 128, 128, 0.68);;
     .todo-delete {
       font-size: 1.5em;
+      a i {
+        visibility: hidden;
+        color: #e74c3c;
+        &:hover, &:focus {
+          color: #F11B1B;
+        }
+      }
     }
   }
-
-
-
 }
+
+.todo:hover .todo-delete a i, .todo:focus .todo-delete a i {
+  visibility: visible;
+}
+
 
 @keyframes my_animation {
   from {
