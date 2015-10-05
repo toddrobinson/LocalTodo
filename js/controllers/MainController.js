@@ -5,7 +5,7 @@
  * @return {}
  */
 app.controller('MainController', ['$scope', function($scope){
-  $scope.title = "Local To-do";
+  $scope.title = "LOCAL TO-DO";
   /**
    * Setting the todo object if it exists in localStorage
    * Otherwise, putting an example to-do.
@@ -33,7 +33,9 @@ app.controller('MainController', ['$scope', function($scope){
     //Todo can't be blank, and can't already be in array
     if (task && $scope.todos.list.indexOf(task) < 0) {
       $scope.todos.list.push(task);
-      $scope.saveList();
+      if ($scope.saveList()) {
+          $scope.scrollToNew();
+        }
     }
     else {
       alert("Task blank or duplicate.");
@@ -54,9 +56,23 @@ app.controller('MainController', ['$scope', function($scope){
   /**
    * Save the to-do list from scope variable.
    * Saves into localStorage as JSON
+   * @return boolean true
    */
   $scope.saveList = function() {
       var todoString = JSON.stringify($scope.todos);
       localStorage.setItem("todos", todoString);
+      return true;
   };
+
+  /**
+   * Scroll to the last element in the todolist
+   * @return
+   */
+  $scope.scrollToNew = function() {
+    $('html, body').animate({
+    scrollTop: $('.todoList').find(".todo:last").offset().top
+    }, 500);
+
+  };
+
 }]);
