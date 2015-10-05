@@ -19,11 +19,11 @@
       <h1 class="text-center">{{title}}</h1>
       <form  ng-submit="addTodo()">
         <input type="text" class="small-12 columns" id="taskEntry" placeholder="Example: Take out trash" autofocus>
-        <input type="submit" class="button small-12 columns" value="Add to-do">
+        <input type="submit" class="button small-12 columns" value="ADD TO-DO">
       </form>
     </section>
     <section class="todoList row" >
-      <h2 class="text-center">Your To-dos</h2>
+      <h2 class="text-center">To-dos</h2>
       <div class="todo small-12  columns" ng-repeat="todo in todos.list" tabindex='3'>
         <div class="todo-text small-10 large-11 columns" id="todo-{{$index}}">{{todo}}</div>
         <div class="todo-delete small-2 large-1 columns"><a href="" ng-click="deleteTodo(todo)"><i class="fa fa-trash-o"></i></a></div>
