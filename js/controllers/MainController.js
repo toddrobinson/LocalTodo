@@ -18,6 +18,7 @@ app.controller('MainController', ['$scope', function($scope){
         $scope.todos = {};
         $scope.todos.list = [];
         $scope.todos.list.push("Example to-do!");
+        $scope.taskToAdd = '';
       }
   else {
       $scope.todos = JSON.parse(localStorage.getItem('todos'));
@@ -27,14 +28,13 @@ app.controller('MainController', ['$scope', function($scope){
    * @return {} []
    */
   $scope.addTodo = function() {
-    var taskInput = $('input').filter("#taskEntry");
-    var task = $(taskInput).val();
-    $(taskInput).val("");
+    var task = $scope.taskToAdd;
     //Todo can't be blank, and can't already be in array
     if (task && $scope.todos.list.indexOf(task) < 0) {
       $scope.todos.list.push(task);
       if ($scope.saveList()) {
-          $scope.scrollToNew();
+          $scope.addTodoForm.$setPristine();
+          $scope.taskToAdd = '';
         }
     }
     else {
@@ -62,17 +62,6 @@ app.controller('MainController', ['$scope', function($scope){
       var todoString = JSON.stringify($scope.todos);
       localStorage.setItem("todos", todoString);
       return true;
-  };
-
-  /**
-   * Scroll to the last element in the todolist
-   * @return
-   */
-  $scope.scrollToNew = function() {
-    $('html, body').animate({
-    scrollTop: $('.todoList').find(".todo:last").offset().top
-    }, 500);
-
   };
 
 }]);

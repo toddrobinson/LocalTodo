@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <!-- Angular -->
   <script src="https://code.angularjs.org/1.4.2/angular.min.js"></script>
 
@@ -17,13 +16,13 @@
   <main ng-controller="MainController">
     <section class="row">
       <h1 class="text-center">{{title}}</h1>
-      <form  ng-submit="addTodo()">
-        <input type="text" class="small-12 columns" id="taskEntry" placeholder="Example: Take out trash" autofocus>
+      <form  ng-submit="addTodo()" name="addTodoForm">
+        <input type="text" class="small-12 columns" ng-model="taskToAdd" id="taskEntry" placeholder="Example: Take out trash" autofocus>
         <input type="submit" class="button small-12 columns" value="ADD TO-DO">
       </form>
     </section>
     <section class="todoList row" >
-      <h2 class="text-center">To-dos</h2>
+      <h2 class="text-center">To-dos ({{todos.list.length}})</h2>
       <div class="todo small-12  columns" ng-repeat="todo in todos.list" tabindex='3'>
         <div class="todo-text small-10 large-11 columns" id="todo-{{$index}}">{{todo}}</div>
         <div class="todo-delete small-2 large-1 columns"><a href="" ng-click="deleteTodo(todo)"><i class="fa fa-trash-o"></i></a></div>
